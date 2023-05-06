@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yes-No AI</title>
+</head>
+<body>
+	<h1>Yes-No AI</h1>
+	<p>Ask a question:</p>
+	<input type="text" id="question"><br><br>
+	<button onclick="answer()">Ask</button>
+	<p id="response"></p>
+	
+	<script>
+		function answer() {
+			const question = document.getElementById("question").value.toLowerCase().trim();
+			let response;
+			if (question.endsWith("?")) {
+				const random = Math.floor(Math.random() * 2);
+				if (random == 0) {
+					response = "Yes.";
+				} else {
+					response = "No.";
+				}
+			} else {
+				response = "Please ask a question.";
+			}
+			document.getElementById("response").innerHTML = response;
+		}
+	</script>
+</body>
+</html>
